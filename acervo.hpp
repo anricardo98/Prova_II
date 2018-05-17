@@ -9,12 +9,17 @@ using namespace std;
 class Acervo{
 protected:
 	vector<Informacoes*> deposito;
+	int quant_cd;
+	int quant_dvd;
+	int quant_livro;
 		
 public:
+	Acervo (Informacoes *livro1; Informacoes *livro2, Informacoes *cd1, Informacoes *cd2, Informacoes *dvd1, Informacoes *dvd2);
 	void adicionar(Informacoes *a);
-	void remover (Informacoes *a);
+	void remover (string tit, int form);
 	void modificar(int pos);
-
+	void mostrar();
+	void quantidade();
 }
 
 

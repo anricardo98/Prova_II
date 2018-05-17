@@ -4,6 +4,10 @@ using namespace std;
 #include <vector>
 #include "informacoes.hpp"
 
+int Informacoes::getFormato(){
+	return formato;
+}
+
 string Informacoes::getTitulo(){
 	return titulo;
 }
@@ -25,3 +29,6 @@ void Informacoes::setAno(int ano){
 	this->ano = ano;
 }
 
+void Informacoes::setFormato(int formato){
+	this->formato = formato;
+}

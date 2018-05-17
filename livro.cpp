@@ -5,6 +5,15 @@ using namespace std;
 #include "livro.hpp"
 #include "informacoes.hpp"
 
+Livro::Livro(string a, string b, int c, string d, int e){
+	formato = 1;
+	titulo = a;
+	responsavel = b;
+	ano = c;
+	editora = d;
+	isbn = e;
+}
+
 string Livro::getEditora(){
 	return isbn;
 }

@@ -11,6 +11,7 @@ protected:
 	int faixas;
 	string gravadora;
 public:
+	CD (string a, string b, int c, int d, string e);
 	int getFaixa();
 	string getGrava();
 	void setFaixa(int faixa);

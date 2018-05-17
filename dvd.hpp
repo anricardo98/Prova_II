@@ -11,6 +11,7 @@ protected:
 	int duracao;
 	int classificacao;
 public:
+	Dvd (string a, string b, int c, int d, int e);
 	int getDuracao();
         int getClassificacao();
 	void setDuracao(int duracao);

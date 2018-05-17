@@ -10,13 +10,16 @@ protected:
 	string titulo;
 	string responsavel;
 	int ano;
+	int formato;
 public:
+	int getFormato();
 	string getTitulo();
         string getResponsavel();
         int getAno();
 	void setTitulo(string titulo);
 	void setResponsavel(string responsavel);
 	void setAno(int ano);
+	void setFormato(int formato);
 };
 
 #endif
