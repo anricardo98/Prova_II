@@ -9,11 +9,15 @@ Dvd::Dvd(){
 
 }
 
+Dvd::~Dvd(){
+
+}
+
 
 Dvd::Dvd(string a, string b, int c, int d, int e){
-	formato = 1;
+	formato = 3;
 	titulo = a;
-	diretor = b;
+	responsavel = b;
 	ano = c;
 	duracao = e ;
 	classificacao = d;

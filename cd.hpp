@@ -12,6 +12,7 @@ protected:
 	string gravadora;
 public:
 	CD();
+	~CD();
 	CD (string a, string b, int c, int d, string e);
 	int getFaixa();
 	string getGrava();

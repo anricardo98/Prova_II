@@ -10,14 +10,15 @@ using namespace std;
 class Livro: public Informacoes{
 protected:
 	string editora;
-	int isbn;
+	long int isbn;
 public:
 	Livro();
-	Livro(string a, string b, int c, string d, int e);
+	~Livro();
+	Livro(string a, string b, int c, string d, long int e);
 	string getEditora();
-	int getISBN();
+	long int getISBN();
 	void setEditora(string editora);
-	void setISBN(int isbn);
+	void setISBN(long int isbn);
 };
 
 #endif

@@ -4,6 +4,10 @@ using namespace std;
 #include <vector>
 #include "informacoes.hpp"
 
+Informacoes::~Informacoes(){
+
+}
+
 int Informacoes::getFormato(){
 	return formato;
 }

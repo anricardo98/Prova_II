@@ -9,6 +9,10 @@ CD::CD(){
 
 }
 
+CD::~CD(){
+
+}
+
 CD::CD (string a, string b, int c, int d, string e) {
 	formato = 2;
 	titulo = a;

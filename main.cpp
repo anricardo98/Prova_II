@@ -42,21 +42,19 @@ int main(){
                 cin >> produto;
 
                 if (produto == 1){ //Livro
-                    Informacoes* z = new Livro;
-		    Livro* prod = (Livro*) (z);
+		    Livro *prod = new Livro();
 
                     string x;
                     int y;
+	            long int z;
 			
-		    
-		    prod->setFormato(1);
-
-                    cout << "Digite o titulo do livro" << endl;
-                    cin >> x;
+		    cout << "Digite o titulo do livro" << endl;
+                    getline (cin,x);
                     prod->setTitulo(x);
 
+		    cin.ignore();
                     cout << "Digite o(a) autor(a) do livro" << endl;
-                    cin >> x;
+                    getline (cin,x);
                     prod->setResponsavel(x);
 
                     cout << "Digite o ano de lançamento do livro" << endl;
@@ -64,32 +62,34 @@ int main(){
                     prod->setAno(y);
 
                     cout << "Digite o ISBN do livro, apenas os numeros" << endl;
-                    cin >> y;
-                    prod->setISBN(y);
+                    cin >> z;
+                    prod->setISBN(z);
 
+		    cin.ignore();
                     cout << "Digite a Editora do livro" << endl;
-                    cin >> x;
+                    getline (cin,x);
                     prod->setEditora(x);
 
                     midia.adicionar(prod);
 
                 }
 
+		
                 else if (produto == 2){ //CD
-                    Informacoes* z = new CD;
-		    CD* prod = (CD*) (z);
+		    CD* prod = new CD;
 
 		    prod->setFormato(2);
 
                     string x;
                     int y;
 			
+		    cin.ignore();
                     cout << "Digite o titulo do album" << endl;
-                    cin >> x;
+                    getline (cin,x);
                     prod->setTitulo(x);
 
                     cout << "Digite o(a) compositor(a) do album" << endl;
-                    cin >> x;
+                    getline (cin,x);
                     prod->setResponsavel(x);
 
                     cout << "Digite o ano de lançamento do album" << endl;
@@ -100,43 +100,43 @@ int main(){
                     cin >> y;
                     prod->setFaixa(y);
 
+		    cin.ignore();
                     cout << "Digite a gravadora do album" << endl;
-                    cin >> x;
+                    getline (cin,x);
                     prod->setGrava(x);
 
                     midia.adicionar(prod);
                 }
 
-                else if (produto == 3){ //DVD
-                    Informacoes* z = new Dvd;
-		    Dvd* prod = (Dvd*) (z);
-
-                    string x;
-                    int y;
+		else if (produto == 3){ //DVD
+		    string x, z;
+                    int y, a, b;
 			
-                    cout << "Digite o titulo do Dvd" << endl;
-                    cin >> x;
-                    prod->setTitulo(x);
+		    cout << "Digite o titulo do filme" << endl;
+		    getline (cin, x);
 
-                    cout << "Digite o(a) diretor(a) do video do Dvd" << endl;
-                    cin >> x;
-                    prod->setResponsavel(x);
-
-                    cout << "Digite o ano de lançamento do Dvd" << endl;
+		    cin.ignore();
+		    cout << "Digite o(a) diretor(a) do filme" << endl;
+                    getline (cin,z);
+                  
+                    cout << "Digite o ano de lançamento do livro" << endl;
                     cin >> y;
-                    prod->setAno(y);
+                    
+		    
+		    cout << "Digite a classificacao do filme" << endl;
+                    cin >> a;
+                    
 
-                    cout << "Digite a classificacao etaria do Dvd" << endl;
-                    cin >> y;
-                    prod->setClassificacao(y);
+		    cout << "Digite a duracao do filme" << endl;
+		    cin >> b;
+		   
+                    Dvd *prod  = new Dvd(x, z, y, b, a);
 
-                    cout << "Digite a duracao do filme, em minutos" << endl;
-                    cin >> y;
-                    prod->setDuracao(y);
-
-                    midia.adicionar(prod);
+		    midia.adicionar(prod);
+                    
                 }
 
+                
                 else {
                     cout << "Indicação invalida" << endl;
                 }
@@ -150,9 +150,11 @@ int main(){
 	    cout << "Digite 2 para CD" << endl;
             cout << "Digite 3 para DVD" << endl;
 	    cin >> resposta;
-
+		
+	    cin.ignore();
 	    cout << "Qual o titulo do que voce deseja apagar?" << endl;
-	    cin >> tit;
+	    getline (cin, tit);
+		
 	
 	    if(resposta == 1){
 	        midia.remover(tit, resposta);
@@ -173,7 +175,33 @@ int main(){
         }
 
         else if (resposta == 3){
-            midia.modificar();
+	    int resposta;
+	    string tit;
+	    cout << "Qual o tipo do livro que você deseja editar?" << endl;
+	    cout << "Digite 1 para livros" << endl;
+	    cout << "Digite 2 para CD" << endl;
+            cout << "Digite 3 para DVD" << endl;
+	    cin >> resposta;
+
+	    cin.ignore();
+	    cout << "Qual o titulo do que voce deseja apagar?" << endl;
+	    getline (cin, tit);
+
+	   if(resposta == 1){
+	        midia.modificar(tit, resposta);
+	    }
+
+	    else if  (resposta == 2){
+	        midia.modificar(tit, resposta);
+	    }
+
+	    else if (resposta == 3){
+		midia.modificar(tit, resposta);
+	    }
+
+	    else {
+		cout << "Opcao invalida" << endl;
+	    } 
         }
 
         else if (resposta == 4){
@@ -185,7 +213,7 @@ int main(){
 	}
 
         else {
-            cout << "Resposta Invalida";
+            cout << "Resposta Invalida" << endl;
         }
 
         cout << "Deseja realizar um novo processo?" << endl;

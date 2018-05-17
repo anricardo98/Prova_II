@@ -12,6 +12,7 @@ protected:
 	int ano;
 	int formato;
 public:
+	~Informacoes();
 	int getFormato();
 	string getTitulo();
         string getResponsavel();

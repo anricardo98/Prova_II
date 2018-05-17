@@ -5,7 +5,15 @@ using namespace std;
 #include "livro.hpp"
 #include "informacoes.hpp"
 
-Livro::Livro(string a, string b, int c, string d, int e){
+Livro::Livro(){
+	formato = 1;
+}
+
+Livro::~Livro(){
+
+}
+
+Livro::Livro(string a, string b, int c, string d, long int e){
 	formato = 1;
 	titulo = a;
 	responsavel = b;
@@ -18,7 +26,7 @@ string Livro::getEditora(){
 	return editora;
 }
 
-int Livro::getISBN(){
+long int Livro::getISBN(){
 	return isbn;
 }
 
@@ -26,6 +34,6 @@ void Livro::setEditora(string editora){
 	this->editora = editora;
 }
 
-void Livro::setISBN(int isbn){
+void Livro::setISBN(long int isbn){
 	this->isbn = isbn;
 }
