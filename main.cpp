@@ -14,11 +14,11 @@ int main(){
 	int loop = 1;
 
 	Livro *livro1 = new Livro ("Love Simon", "Becky Albertally", 2015, "Intrisica", 9788580578935); 
-	livro *livro2 = new Livro ("Jogos Vorazes", "Suzanne Collins", 2008, "Rocco", 9788579800245);  
+	Livro *livro2 = new Livro ("Jogos Vorazes", "Suzanne Collins", 2008, "Rocco", 9788579800245);  
 	Dvd *dvd1 = new Dvd ("Jogos Vorazes", "Gary Ross", 2012, 12, 144); 
 	Dvd *dvd2 = new Dvd ("Vingadores","Sarah Finn", 2012, 12, 143); 
-	CD *cd1 = new Cd ("A thousand forms of fear", "Sia", 2014, 12, "RCA Records");
-	CD *cd2 = new Cd ("Dona de mim", "Iza", 2018, 14, "Warner");
+	CD *cd1 = new CD ("A thousand forms of fear", "Sia", 2014, 12, "RCA Records");
+	CD *cd2 = new CD ("Dona de mim", "Iza", 2018, 14, "Warner");
 
 	Acervo midia = Acervo (livro1 , livro2, cd1, cd2, dvd1, dvd2); 
 
@@ -98,7 +98,7 @@ int main(){
 
                     cout << "Digite o numero de faixas do album" << endl;
                     cin >> y;
-                    prod->setGrava(y);
+                    prod->setFaixa(y);
 
                     cout << "Digite a gravadora do album" << endl;
                     cin >> x;
@@ -108,8 +108,8 @@ int main(){
                 }
 
                 else if (produto == 3){ //DVD
-                    Informacoes* z = new CD;
-		    Dvd* prod = (CD*) (z);
+                    Informacoes* z = new Dvd;
+		    Dvd* prod = (Dvd*) (z);
 
                     string x;
                     int y;
@@ -143,20 +143,45 @@ int main(){
         }
 
         else if (resposta == 2){
+            int resposta;
+            string tit;
+	    cout << "O que voce deseja apagar?" << endl;
+	    cout << "Digite 1 para livros" << endl;
+	    cout << "Digite 2 para CD" << endl;
+            cout << "Digite 3 para DVD" << endl;
+	    cin >> resposta;
 
-            dep.remover(pos);
+	    cout << "Qual o titulo do que voce deseja apagar?" << endl;
+	    cin >> tit;
+	
+	    if(resposta == 1){
+	        midia.remover(tit, resposta);
+	    }
+
+	    else if  (resposta == 2){
+	        midia.remover(tit, resposta);
+	    }
+
+	    else if (resposta == 3){
+		midia.remover(tit, resposta);
+	    }
+
+	    else {
+		cout << "Opcao invalida" << endl;
+	    }
+
         }
 
         else if (resposta == 3){
-            dep.estoque();
+            midia.modificar();
         }
 
         else if (resposta == 4){
-            dep.vazio();
+            midia.mostrar();
         }
 
 	else if (resposta == 5){
-
+            midia.quantidade();
 	}
 
         else {
@@ -170,10 +195,4 @@ int main(){
 
 
     return 0;
-}
-
-
-
-
-	return 0;
 }

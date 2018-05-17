@@ -2,12 +2,13 @@
 using namespace std;
 #include <string>
 #include <vector>
+#include "acervo.hpp"
 #include "informacoes.hpp"
 #include "cd.hpp"
 #include "dvd.hpp"
 #include "livro.hpp"
 
-Acervo::Acervo (Informacoes *livro1; Informacoes *livro2, Informacoes *cd1, Informacoes *cd2, Informacoes *dvd1, Informacoes *dvd2){
+Acervo::Acervo (Informacoes *livro1, Informacoes *livro2, Informacoes *cd1, Informacoes *cd2, Informacoes *dvd1, Informacoes *dvd2){
 	quant_livro = 2;
 	quant_cd = 2;
 	quant_dvd = 2;
@@ -33,15 +34,15 @@ void Acervo::adicionar(Informacoes *a){
 	if (aux == 0){
 		deposito.push_back(a);
 
-		if (a->formato == 1){
+		if (a->getFormato() == 1){
 			quant_livro++;	
 		}
 
-		else if (a->formato == 2){
+		else if (a->getFormato() == 2){
 			quant_cd++;
 		}
 
-		else if (a->formato == 3){
+		else if (a->getFormato() == 3){
 			quant_dvd++;
 		}
 		
@@ -81,7 +82,7 @@ void Acervo::remover (string tit, int form){
 
 }
 
-void Acervo::modificar(int pos){
+void Acervo::modificar(){
 	
 }
 

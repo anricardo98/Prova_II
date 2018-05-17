@@ -5,6 +5,10 @@ using namespace std;
 #include "cd.hpp"
 #include "informacoes.hpp"
 
+CD::CD(){
+
+}
+
 CD::CD (string a, string b, int c, int d, string e) {
 	formato = 2;
 	titulo = a;
@@ -16,7 +20,7 @@ CD::CD (string a, string b, int c, int d, string e) {
 
 
 int CD::getFaixa(){
-	return faixa;
+	return faixas;
 }
 
 string CD::getGrava(){
@@ -24,7 +28,7 @@ string CD::getGrava(){
 }
 
 void CD::setFaixa(int faixa){
-	this->faixa = faixa;
+	this->faixas = faixa;
 }
 
 void CD::setGrava(string gravadora){

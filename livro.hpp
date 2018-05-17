@@ -12,6 +12,7 @@ protected:
 	string editora;
 	int isbn;
 public:
+	Livro();
 	Livro(string a, string b, int c, string d, int e);
 	string getEditora();
 	int getISBN();

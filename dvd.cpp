@@ -5,9 +5,15 @@ using namespace std;
 #include "dvd.hpp"
 #include "informacoes.hpp"
 
+Dvd::Dvd(){
+
+}
+
+
 Dvd::Dvd(string a, string b, int c, int d, int e){
-	formato = 333;
-	titulo = 1;
+	formato = 1;
+	titulo = a;
+	diretor = b;
 	ano = c;
 	duracao = e ;
 	classificacao = d;

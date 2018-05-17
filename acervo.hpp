@@ -14,13 +14,13 @@ protected:
 	int quant_livro;
 		
 public:
-	Acervo (Informacoes *livro1; Informacoes *livro2, Informacoes *cd1, Informacoes *cd2, Informacoes *dvd1, Informacoes *dvd2);
+	Acervo (Informacoes *livro1, Informacoes *livro2, Informacoes *cd1, Informacoes *cd2, Informacoes *dvd1, Informacoes *dvd2);
 	void adicionar(Informacoes *a);
 	void remover (string tit, int form);
-	void modificar(int pos);
+	void modificar();
 	void mostrar();
 	void quantidade();
-}
+};
 
 
 #endif
